@@ -1,4 +1,4 @@
-# vibe2
+# Decido
 
 A new Flutter project.
 
