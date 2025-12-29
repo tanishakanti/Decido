@@ -999,16 +999,6 @@ class _RestaurantDetailsPageState extends State<RestaurantDetailsPage>
 
   Widget _buildWalkInOffersSection() {
     String selectedDay = "Today";
-    List<String> days = [
-      "Today",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ];
 
     bool isDropdownOpen = false;
 
@@ -1350,7 +1340,7 @@ class _RestaurantDetailsPageState extends State<RestaurantDetailsPage>
   }
 
   Widget _buildReviewsSection() {
-    final PageController _pageController =
+    final PageController pageController =
     PageController(viewportFraction: 0.92);
 
     return Column(
@@ -1362,7 +1352,7 @@ class _RestaurantDetailsPageState extends State<RestaurantDetailsPage>
         SizedBox(
           height: 270,
           child: PageView.builder(
-            controller: _pageController,
+            controller: pageController,
             itemCount: 3,
             itemBuilder: (_, index) {
               return Padding(
@@ -1419,7 +1409,7 @@ class _RestaurantDetailsPageState extends State<RestaurantDetailsPage>
                   Icon(Icons.edit, color: Colors.pinkAccent, size: 18),
                   SizedBox(width: 8),
                   Text(
-                    "Leave a review",
+                    "Leave a review     >",
                     style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 ],
@@ -1717,23 +1707,6 @@ class _RestaurantDetailsPageState extends State<RestaurantDetailsPage>
           ),
         ),
       ],
-    );
-  }
-
-  Widget _circleIcon(IconData icon, {VoidCallback? onTap}) {
-    return ClipOval(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-        child: GestureDetector(
-          onTap: onTap,
-          child: Container(
-            width: 40,
-            height: 40,
-            color: Colors.black.withOpacity(0.4),
-            child: Icon(icon, color: Colors.white, size: 20),
-          ),
-        ),
-      ),
     );
   }
 

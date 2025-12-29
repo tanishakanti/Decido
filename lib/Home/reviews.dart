@@ -5,7 +5,7 @@ import 'package:vibe2/Home/restInfo.dart';
 
 class ReviewDetailsPage extends StatefulWidget {
   final int rating;
-  ReviewDetailsPage({
+  const ReviewDetailsPage({
     super.key,
     required this.rating,
   });
